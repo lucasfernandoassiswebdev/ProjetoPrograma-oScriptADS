@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="placanymous">
+    <link rel="stylesheet" href="estilos/estilos.css">
+    <title>Editar Venda</title>
+    <style>
+        h5 {
+            color: blue;
+            font-family: 'Arial', 'sans-serif';
+            font-size: 25px;
+            font-style: oblique;
+        }
+    </style>
+
+</head>
+<nav class="navbar navbar-expand-lg navbar-light  ">
+    <a class="navbar-brand" href="#">
+      </a>
+
+    <div class="collapse navbar-collapse " id="navbarNav">
+        <ul class="navbar-nav center-navbar">
+            <li class="nav-item">
+                <a class="nav-link " href="/">Home</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/vendas/listar">Vendas Cadastradas</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link " href="/vendas/novo">Cadastrar Nova Venda</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<body>
+
+
+    <div class="container-fluid">
+
+        <br>
+        <!-- aponta para o roteamento-->
+        <form action="/vendas/salvar" method="post">
+            <h5>Vendas</h5>
+            <br>
+            <div class="content">
+                <div class="form-group row">
+                    <div class="col-md-1">
+                        <label>Codigo: </label>
+                        <input type="text" value="<%= venda.id_venda%>" name="id_venda" class="form-control" placeholder="Codigo" size="5" readonly>
+                    </div>
+                    <br>
+
+                    <div class="col-md-5">
+                        <label>Data da venda</label>
+                        <input type="text" value="<%= venda.dt_venda%>" name="dt_venda" class="form-control" placeholder="Nome" size="60" maxlength="50">
+                    </div>
+                    <br>
+
+                    <div class="col-md-5">
+                        <label>Nome do Funcionário: </label>
+                        <input type="text" value="<%= venda.nome_funcionario%>" name="nome_funcionario" class="form-control" placeholder="Marca" size="60" maxlength="50">
+                    </div>
+                    <br>
+                    
+                    <!-- s -->
+                </div>
+                <br>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-6"></div>
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-primary btn-block">Salvar </button>
+                </div>
+                <br>
+                <div class="col-md-3">
+                    <a class="btn btn-secondary btn-block" href="/vendaListar">Voltar</a>
+                </div>
+            </div>
+        </form>
+        <hr>
+    </div>
+
+    <footer>
+        <p class="text-center">
+            &#169; 2019 - Fatec Franca-SP - Programação Script - Lucas Fernando de Assis - 5ºADS - Noturno.
+        </p>
+    </footer>
+
+    <!-- Carrega os scripts e bibliotecas javascript -->
+    <script type="text/javascript" src="vendor/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="vendor/popper.js/dist/umd/popper.js"></script>
+    <script type="text/javascript" src="vendor/bootstrap/dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+</body>
+
+</html>

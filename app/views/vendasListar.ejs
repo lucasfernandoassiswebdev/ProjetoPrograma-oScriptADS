@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="placanymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="placanymous">
+    <link rel="stylesheet" href="estilos/estilos.css">
+    <!-- <title>Produtos</title>   -->
+    <style>
+        a1 {
+            color: blue;
+            font-family: 'Arial', 'sans-serif';
+            font-size: 25px;
+            font-style: oblique;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Nav Bar - Cabecalho -->
+    <br>
+
+    <nav class="navbar navbar-expand-lg navbar-light  ">
+        <a class="navbar-brand" href="#">
+              </a>
+
+        <div class="collapse navbar-collapse " id="navbarNav">
+            <ul class="navbar-nav center-navbar">
+                <li class="nav-item">
+                    <a class="nav-link " href="/">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/vendas/listar">Vendas Cadastradas</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link " href="/vendas/novo">Cadastrar Novo Tênis</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section id="listarvendas">
+
+            <a1> Vendas Cadastradas </a1>
+
+            <fieldset>
+                <table class="table table-striped table-bordered table-hover table-overflow" widith="4" padding=" .7em" id="registros">
+                    <tr>
+                        <td>Código</td>
+                        <td>Data</td>
+                        <td>Funcionário</td>                        
+                    </tr>
+
+                    <% for(i=0; i<vendas.length; i++) { %>
+                        <tr>
+                            <td>
+                                <%= vendas[i].id_vendas %>
+                            </td>
+                            <td>
+                                <%= vendas[i].data %>
+                            </td>
+                            <td>
+                                <%= vendas[i].nome_funcionario %>
+                            </td>                            
+
+                            <td><a class="btn btn-outline-warning btn-lg btn-block " href=<%="/vendas/" + vendas[i].id_vendas %>><i class="far fa-edit">   </a></td>
+                            <td><a class="btn btn-outline-danger btn-lg btn-block " href=<%="/vendas/excluir/" + vendas[i].id_vendas%>><i class="fas fa-trash-alt" > </i> </a></td>
+                        </tr>
+                        <% } %>
+
+                </table>
+            </fieldset>
+        </section>
+    </div>
+    <footer>
+        <p class="text-center">
+            &#169; 2019 - Fatec Franca-SP - Programação Script - Lucas Fernando de Assis - 5ºADS - Noturno.
+        </p>
+    </footer>
+</body>
+
+</html>

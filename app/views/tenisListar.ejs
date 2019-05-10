@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="placanymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="placanymous">
+    <link rel="stylesheet" href="estilos/estilos.css">
+    <!-- <title>Produtos</title>   -->
+    <style>
+        a1 {
+            color: blue;
+            font-family: 'Arial', 'sans-serif';
+            font-size: 25px;
+            font-style: oblique;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Nav Bar - Cabecalho -->
+    <br>
+
+    <nav class="navbar navbar-expand-lg navbar-light  ">
+        <a class="navbar-brand" href="#">
+              </a>
+
+        <div class="collapse navbar-collapse " id="navbarNav">
+            <ul class="navbar-nav center-navbar">
+                <li class="nav-item">
+                    <a class="nav-link " href="/">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/tenis/listar">Tênis Cadastrados</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link " href="/tenis/novo">Cadastrar Novo Tênis</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section id="listarTenis">
+
+            <a1> Tênis Cadastrados </a1>
+
+            <fieldset>
+                <table class="table table-striped table-bordered table-hover table-overflow" widith="4" padding=" .7em" id="registros">
+                    <tr>
+                        <td>Código</td>
+                        <td>Nome</td>
+                        <td>Marca</td>
+                        <td>Tamanho</td>
+                    </tr>
+
+                    <% for(i=0; i<tenis.length; i++) { %>
+                        <tr>
+                            <td>
+                                <%= tenis[i].id_tenis %>
+                            </td>
+                            <td>
+                                <%= tenis[i].nome %>
+                            </td>
+                            <td>
+                                <%= tenis[i].marca %>
+                            </td>
+                            <td>
+                                <%= tenis[i].tamanho %>
+                            </td>
+
+                            <td><a class="btn btn-outline-warning btn-lg btn-block " href=<%="/tenis/" + tenis[i].id_tenis %>><i class="far fa-edit">   </a></td>
+                            <td><a class="btn btn-outline-danger btn-lg btn-block " href=<%="/tenis/excluir/" + tenis[i].id_tenis%>><i class="fas fa-trash-alt" > </i> </a></td>
+                        </tr>
+                        <% } %>
+
+                </table>
+            </fieldset>
+        </section>
+    </div>
+    <footer>
+        <p class="text-center">
+            &#169; 2019 - Fatec Franca-SP - Programação Script - Lucas Fernando de Assis - 5ºADS - Noturno.
+        </p>
+    </footer>
+</body>
+
+</html>
